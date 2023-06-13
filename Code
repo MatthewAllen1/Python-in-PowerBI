@@ -1,0 +1,62 @@
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import random
+
+# Generating the DataFrame
+random.seed(42)
+data = {
+    'Name': [random.choice(['John', 'Emma', 'Michael', 'Sophia', 'William']) for _ in range(10000)],
+    'Age': [random.randint(25, 70) for _ in range(10000)],
+    'City': [random.choice(['New York', 'London', 'Paris', 'Tokyo', 'Sydney']) for _ in range(10000)],
+    'Salary': [random.randint(50000, 350000) for _ in range(10000)],
+    'Education': [random.choice(['High School', 'Bachelor', 'Master', 'PhD']) for _ in range(10000)],
+    'Occupation': [random.choice(['Engineer', 'Doctor', 'Teacher', 'Artist']) for _ in range(10000)],
+    'Experience': [random.randint(5, 30) for _ in range(10000)],
+    'Marital Status': [random.choice(['Married', 'Single']) for _ in range(10000)],
+    'Children': [random.randint(0, 5) for _ in range(10000)],
+    'Home Ownership': [random.choice(['Rent', 'Own']) for _ in range(10000)]
+}
+df = pd.DataFrame(data)
+
+# Data Visualization
+plt.figure(figsize=(12, 10))
+
+# Bar plot - Count of individuals in each city
+plt.subplot(2, 2, 1)
+sns.countplot(x='City', data=df, palette='pastel')
+plt.title('Count of Individuals in Each City', fontsize=16)
+plt.xlabel('City', fontsize=12)
+plt.ylabel('Count', fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+# Histogram - Distribution of age
+plt.subplot(2, 2, 2)
+sns.histplot(x='Age', data=df, bins=30, kde=True, color='lightblue')
+plt.title('Distribution of Age', fontsize=16)
+plt.xlabel('Age', fontsize=12)
+plt.ylabel('Frequency', fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+# Violin plot - Salary distribution across cities
+plt.subplot(2, 2, 3)
+sns.violinplot(x='City', y='Salary', data=df, palette='muted')
+plt.title('Salary Distribution Across Cities', fontsize=16)
+plt.xlabel('City', fontsize=12)
+plt.ylabel('Salary', fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+# Box plot - Salary distribution by education level
+plt.subplot(2, 2, 4)
+sns.boxplot(x='Education', y='Salary', data=df, palette='coolwarm')
+plt.title('Salary Distribution by Education Level', fontsize=16)
+plt.xlabel('Education Level', fontsize=12)
+plt.ylabel('Salary', fontsize=12)
+plt.xticks(fontsize=10)
+plt.yticks(fontsize=10)
+
+plt.tight_layout()
+plt.show()
