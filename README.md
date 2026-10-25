@@ -1,3 +1,15 @@
-I used OpenAI to create a dataset with 10,000 rows and 10 columns of random data. It has no meaning other than something I could test with. I then imported this dataset into PowerBi to mess around with integrating Python scripts.
-I imported pandas, used the seaborn package and also matplotlib to create the visuals. I like to use mamba forge to manage all packages. 
-I started very basic with my first few visuals and worked into something more advanced in the fourth visual.
+# Python + Power BI Integration
+
+Experiment integrating Python-based calculations and visualizations into Power BI using **synthetic data**, not confidential business information.
+
+## Contents
+- `Code` — Python example snippets
+- `Dataset.xlsx` — generated sample dataset
+- `test.pbix` — Power BI example
+- `Visuals.pdf` — exported screenshots
+
+## Tools
+Python, pandas, matplotlib, seaborn and Microsoft Power BI.
+
+## Skills demonstrated
+Bridging programmable data preparation with repeatable visual reporting. This is a learning example, not a production dashboard.
